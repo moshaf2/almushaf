@@ -1,71 +1,90 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>المصحف</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>المسبحة</title>
   <style>
     body {
-      font-family: 'Scheherazade', serif;
-      background: #f3f0e9;
+      font-family: 'Amiri', serif;
+      background: linear-gradient(to bottom, #f3f1e7, #e9e5d9);
       text-align: center;
-      margin: 0;
-      padding: 0;
+      padding: 50px 20px;
+      color: #3e2f1c;
     }
 
     h1 {
-      margin-top: 40px;
-      font-size: 3rem;
-      color: #4b2c20;
+      font-size: 2.5em;
+      margin-bottom: 30px;
+      color: #5e422b;
     }
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 30px;
-      max-width: 600px;
-      margin: 60px auto;
+    .tasbeeh-counter {
+      font-size: 5em;
+      margin: 30px 0;
+      color: #8b5e3c;
+      text-shadow: 1px 1px 1px #ccc;
     }
 
-    .section-button {
-      text-decoration: none;
-      color: inherit;
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
     }
 
-    .card {
-      background-color: #fdf7ed;
-      border: 2px solid #e5d3b3;
-      border-radius: 15px;
-      padding: 30px 20px;
-      font-size: 1.8rem;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-      transition: transform 0.3s, box-shadow 0.3s;
+    button {
+      padding: 15px 30px;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 10px;
+      background-color: #dac5a3;
+      color: #3e2f1c;
+      cursor: pointer;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      transition: background-color 0.3s;
     }
 
-    .card:hover {
-      transform: scale(1.05);
-      box-shadow: 0 6px 16px rgba(0,0,0,0.12);
+    button:hover {
+      background-color: #cbb48f;
+    }
+
+    .footer {
+      margin-top: 50px;
+      font-size: 0.9em;
+      color: #777;
     }
   </style>
 </head>
 <body>
+  <h1>🕌 المسبحة الإلكترونية</h1>
+  
+  <div class="tasbeeh-counter" id="counter">0</div>
 
-  <h1>المصحف</h1>
-
-  <div class="grid">
-    <a href="azkar.html" class="section-button">
-      <div class="card">🕋 الأذكار</div>
-    </a>
-    <a href="quran.html" class="section-button">
-      <div class="card">📖 القرآن الكريم</div>
-    </a>
-    <a href="about.html" class="section-button">
-      <div class="card">ℹ️ حول الموقع</div>
-    </a>
-    <a href="tasbeeh.html" class="section-button">
-      <div class="card">🧿 السبحة</div>
-    </a>
+  <div class="buttons">
+    <button onclick="increment()">سبحان الله</button>
+    <button onclick="increment()">الحمد لله</button>
+    <button onclick="increment()">الله أكبر</button>
+    <button onclick="reset()">إعادة</button>
   </div>
 
+  <div class="footer">
+    جميع الحقوق محفوظة © المصحف
+  </div>
+
+  <script>
+    let count = 0;
+    const counter = document.getElementById('counter');
+
+    function increment() {
+      count++;
+      counter.textContent = count;
+    }
+
+    function reset() {
+      count = 0;
+      counter.textContent = count;
+    }
+  </script>
 </body>
 </html>
