@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <title>الأذكار | المصحف</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      font-family: 'Amiri', serif;
+      background: linear-gradient(to bottom, #f6f2eb, #eae3d5);
+      color: #2d1e0f;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+    }
+
+    .section {
+      margin-bottom: 25px;
+    }
+
+    button {
+      background-color: #6e4f36;
+      color: white;
+      padding: 12px 20px;
+      margin: 10px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #4e3724;
+    }
+
+    #azkar-content {
+      margin-top: 25px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      font-size: 1.2rem;
+      display: none;
+    }
+
+    .back-link {
+      margin-top: 30px;
+      display: inline-block;
+      text-decoration: none;
+      color: #4e3724;
+      border-bottom: 1px dashed #4e3724;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>الأذكار اليومية</h1>
+
+  <div class="section">
+    <button onclick="showAzkar('صباح')">🕊 أذكار الصباح</button>
+    <button onclick="showAzkar('مساء')">🌙 أذكار المساء</button>
+    <button onclick="showAzkar('نوم')">😴 أذكار النوم</button>
+    <button onclick="showAzkar('صلاة')">🕌 بعد الصلاة</button>
+  </div>
+
+  <div id="azkar-content"></div>
+
+  <a href="index.html" class="back-link">← رجوع للصفحة الرئيسية</a>
+
+  <script>
+    const azkarData = {
+      "صباح": `اللّهـمَّ أَنْتَ رَبِّـي لا إلهَ إلاّ أَنْتَ، خَلَقْتَني ... (تكملة الذكر هنا)`,
+      "مساء": `أمسينا وأمسى الملك لله، والحمد لله ... (تكملة الذكر هنا)`,
+      "نوم": `بِاسْمِكَ رَبِّـي وَضَـعْتُ جَنبـي ... (تكملة الذكر هنا)`,
+      "صلاة": `أستغفر الله (3 مرات) – اللهم أنت السلام ومنك السلام ... (تكملة الذكر هنا)`
+    };
+
+    function showAzkar(type) {
+      const content = document.getElementById("azkar-content");
+      content.innerHTML = `<h2>🟢 ${type}</h2><p>${azkarData[type]}</p>`;
+      content.style.display = "block";
+      window.scrollTo({ top: content.offsetTop, behavior: 'smooth' });
+    }
+  </script>
+</body>
+</html>
