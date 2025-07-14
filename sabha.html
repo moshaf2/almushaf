@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>السبحة | المصحف</title>
+  <style>
+    body {
+      font-family: 'Amiri', serif;
+      background: linear-gradient(to bottom, #f3ece3, #e0d9cf);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      color: #5e4328;
+      margin-bottom: 30px;
+      text-shadow: 1px 1px 2px #ccc;
+    }
+
+    .counter {
+      font-size: 4rem;
+      background: #fff;
+      color: #5e4328;
+      padding: 30px 50px;
+      border-radius: 50%;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      margin-bottom: 30px;
+      transition: transform 0.3s;
+    }
+
+    .counter:hover {
+      transform: scale(1.05);
+    }
+
+    .buttons {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    button {
+      background-color: #8b6e4b;
+      color: white;
+      border: none;
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:hover {
+      background-color: #6b4e34;
+      transform: scale(1.05);
+    }
+
+    .back-link {
+      margin-top: 40px;
+      font-size: 1rem;
+      text-decoration: none;
+      color: #5e4328;
+      border-bottom: 1px dashed #5e4328;
+    }
+
+    .back-link:hover {
+      color: #000;
+    }
+  </style>
+</head>
+<body>
+  <h1>السبحة الإلكترونية</h1>
+  <div class="counter" id="counter">0</div>
+  <div class="buttons">
+    <button onclick="increment()">سبّح</button>
+    <button onclick="reset()">تصفير</button>
+  </div>
+  <a href="index.html" class="back-link">← رجوع للصفحة الرئيسية</a>
+
+  <script>
+    let count = 0;
+    const counter = document.getElementById("counter");
+
+    function increment() {
+      count++;
+      counter.textContent = count;
+    }
+
+    function reset() {
+      count = 0;
+      counter.textContent = count;
+    }
+  </script>
+</body>
+</html>
