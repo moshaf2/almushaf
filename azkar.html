@@ -1,92 +1,85 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <title>الأذكار | المصحف</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>الأذكار - المصحف</title>
   <style>
     body {
-      font-family: 'Amiri', serif;
-      background: linear-gradient(to bottom, #f6f2eb, #eae3d5);
-      color: #2d1e0f;
+      font-family: 'Scheherazade', serif;
+      background-color: #f3f0e9;
+      color: #2e2e2e;
       margin: 0;
-      padding: 20px;
+      padding: 0;
       text-align: center;
     }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 30px;
-    }
-
-    .section {
-      margin-bottom: 25px;
-    }
-
-    button {
-      background-color: #6e4f36;
-      color: white;
-      padding: 12px 20px;
-      margin: 10px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-    }
-
-    button:hover {
-      background-color: #4e3724;
-    }
-
-    #azkar-content {
-      margin-top: 25px;
+    header {
+      background-color: #e6d9c2;
       padding: 20px;
-      background-color: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      font-size: 1.2rem;
-      display: none;
+      font-size: 2rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     }
 
-    .back-link {
-      margin-top: 30px;
+    .azkar-section {
+      margin: 30px auto;
+      max-width: 800px;
+      padding: 20px;
+      background-color: #fffefb;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.07);
+    }
+
+    h2 {
+      color: #4b2c20;
+      font-size: 1.8rem;
+    }
+
+    p {
+      font-size: 1.3rem;
+      line-height: 2;
+      margin-top: 20px;
+    }
+
+    .back-button {
       display: inline-block;
+      margin-top: 30px;
+      padding: 10px 20px;
+      background-color: #e0cdb8;
+      border-radius: 10px;
       text-decoration: none;
-      color: #4e3724;
-      border-bottom: 1px dashed #4e3724;
+      color: #2e2e2e;
+      font-size: 1.1rem;
+      transition: background 0.3s;
+    }
+
+    .back-button:hover {
+      background-color: #d5bfa4;
     }
   </style>
 </head>
 <body>
 
-  <h1>الأذكار اليومية</h1>
+  <header>🕋 الأذكار</header>
 
-  <div class="section">
-    <button onclick="showAzkar('صباح')">🕊 أذكار الصباح</button>
-    <button onclick="showAzkar('مساء')">🌙 أذكار المساء</button>
-    <button onclick="showAzkar('نوم')">😴 أذكار النوم</button>
-    <button onclick="showAzkar('صلاة')">🕌 بعد الصلاة</button>
+  <div class="azkar-section">
+    <h2>ذكر الصباح</h2>
+    <p>
+      اللّهـمَّ أَنْتَ رَبِّـي لا إلهَ إلاّ أَنْتَ، خَلَقْتَنـي وَأَنَا عَبْـدُك...
+    </p>
+
+    <h2>ذكر المساء</h2>
+    <p>
+      أَمْسَيْنا وَأَمْسَى الْمُلْكُ للهِ، وَالْحَمْدُ للهِ...
+    </p>
+
+    <h2>ذكر النوم</h2>
+    <p>
+      بِاسْمِكَ اللَّهُمَّ أَمُوتُ وَأَحْيَا...
+    </p>
+
+    <a href="index.html" class="back-button">🔙 رجوع للرئيسية</a>
   </div>
 
-  <div id="azkar-content"></div>
-
-  <a href="index.html" class="back-link">← رجوع للصفحة الرئيسية</a>
-
-  <script>
-    const azkarData = {
-      "صباح": `اللّهـمَّ أَنْتَ رَبِّـي لا إلهَ إلاّ أَنْتَ، خَلَقْتَني ... (تكملة الذكر هنا)`,
-      "مساء": `أمسينا وأمسى الملك لله، والحمد لله ... (تكملة الذكر هنا)`,
-      "نوم": `بِاسْمِكَ رَبِّـي وَضَـعْتُ جَنبـي ... (تكملة الذكر هنا)`,
-      "صلاة": `أستغفر الله (3 مرات) – اللهم أنت السلام ومنك السلام ... (تكملة الذكر هنا)`
-    };
-
-    function showAzkar(type) {
-      const content = document.getElementById("azkar-content");
-      content.innerHTML = `<h2>🟢 ${type}</h2><p>${azkarData[type]}</p>`;
-      content.style.display = "block";
-      window.scrollTo({ top: content.offsetTop, behavior: 'smooth' });
-    }
-  </script>
 </body>
 </html>
