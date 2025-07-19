@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>المسبحة</title>
   <style>
     body {
@@ -17,6 +17,13 @@
       font-size: 2.5em;
       margin-bottom: 30px;
       color: #5e422b;
+    }
+
+    .logo {
+      margin-bottom: 20px;
+      width: 150px;
+      height: auto;
+      display: inline-block;
     }
 
     .tasbeeh-counter {
@@ -41,7 +48,7 @@
       background-color: #dac5a3;
       color: #3e2f1c;
       cursor: pointer;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
       transition: background-color 0.3s;
     }
 
@@ -57,13 +64,19 @@
   </style>
 </head>
 <body>
+  <!-- شعار SVG مدمج -->
+  <svg class="logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="#8b5e3c">
+    <circle cx="32" cy="32" r="30" stroke="#5e422b" stroke-width="3" fill="#dac5a3" />
+    <path d="M32 12 L24 52 L40 52 Z" fill="#8b5e3c" />
+  </svg>
+
   <h1>🕌 المسبحة الإلكترونية</h1>
-  
+
   <div class="tasbeeh-counter" id="counter">0</div>
 
   <div class="buttons">
     <button onclick="increment()">سبحان الله</button>
-     <button onclick="increment()">اللهم صل وسلم علي النبي</button>
+    <button onclick="increment()">اللهم صل وسلم علي النبي</button>
     <button onclick="increment()">الحمد لله</button>
     <button onclick="increment()">الله أكبر</button>
     <button onclick="reset()">إعادة</button>
@@ -75,7 +88,7 @@
 
   <script>
     let count = 0;
-    const counter = document.getElementById('counter');
+    const counter = document.getElementById("counter");
 
     function increment() {
       count++;
